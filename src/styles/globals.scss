@@ -1,0 +1,423 @@
+$space: 30px;
+$textAnimationDuration: 0.5s;
+$textHeight: 60px;
+$selectionSize: 170px;
+$blue: #3b82f6;
+$background: #005;
+$primary: #88d5bf;
+$secondary: #5d6bf8;
+$third: #e27fcb;
+$waterAnimationDurationLong: 25s;
+$waterAnimationDurationMedium: 10s;
+$waterAnimationDurationShort: 3s;
+$appearTime: 1.5s;
+$appearTime1: 0.5s;
+$iconSize: 35px;
+$red: #dc2626;
+$closeIconColor: #6b7280;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container-c {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .nav {
+    width: 45%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px;
+    position: fixed;
+    top: 18%;
+    perspective: 600px;
+    transform-style: preserve-3d;
+    transition: all $appearTime ease-in;
+    .nav-selection {
+      position: absolute;
+      letter-spacing: 1px;
+      cursor: pointer;
+      width: $selectionSize;
+      height: $selectionSize;
+      background: $blue;
+      border-radius: 999px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: 500;
+      transition: all 0.5s ease-in-out;
+    }
+    .nav-selection:nth-child(1) {
+      left: 0;
+      top: 40%;
+    }
+    .nav-selection:nth-child(2) {
+      top: 0;
+      left: 22%;
+    }
+    .nav-selection:nth-child(3) {
+      top: 0;
+      right: 22%;
+    }
+    .nav-selection:nth-child(4) {
+      right: 0;
+      top: 40%;
+    }
+    .nav-selection:hover {
+      transform: scale3d(1.3, 1.3, 1.3);
+    }
+  }
+  .content-section {
+    display: flex;
+    flex: 1 auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    bottom: 35%;
+    .text-slide-show {
+      display: flex;
+      width: 100%;
+      height: fit-content;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transform-style: preserve-3d;
+      // perspective: 500px;
+      line-height: 60px;
+      position: relative;
+      .text {
+        // border: solid 4px red;
+        position: absolute;
+        // border: solid 1px red;
+        // transform: rotateX(-90deg);
+        letter-spacing: 1px;
+        display: none;
+        color: white;
+        font-size: 40px;
+        bottom: 0;
+        height: $textHeight;
+      }
+    }
+  }
+  .section {
+    width: 50%;
+    height: 80%;
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    color: white;
+    position: relative;
+    .close-button {
+      color: $closeIconColor;
+      cursor: pointer;
+      right: 20px;
+      top: 20px;
+      position: absolute;
+      color: #94a3b8;
+    }
+    .close-button:hover {
+      color: #64748b;
+    }
+  }
+  .about-me-section {
+  }
+  .contact-me-section {
+    max-width: 500px;
+    max-height: 400px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    .title {
+      color: red;
+      text-align: center;
+    }
+    .form {
+      display: flex;
+      margin-top: 30px;
+      flex-direction: column;
+      gap: 20px;
+      .field-line {
+        display: flex;
+        flex-direction: column;
+        .label {
+          width: 300px;
+        }
+        .input-field {
+          margin-top: 5px;
+          padding: 5px 10px;
+        }
+      }
+      .submit-button {
+        padding: 8px 16px;
+        background-color: rgb(79, 70, 229);
+        font-size: 0.879rem;
+        font-weight: 500;
+        border-color: transparent;
+        border-width: 1px;
+        border-radius: 0.375rem;
+        align-items: center;
+        cursor: pointer;
+        color: white;
+        max-width: 150px;
+        align-self: flex-end;
+      }
+    }
+  }
+}
+.vide-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: rotateX(-90deg) translateZ($textHeight/2);
+  }
+
+  100% {
+    transform: rotateX(0deg) translateZ(0);
+  }
+}
+@keyframes fade-out {
+  0% {
+    transform: rotateX(0deg) translateZ(0);
+  }
+
+  100% {
+    transform: rotateX(90deg) translateZ($textHeight/2);
+  }
+}
+@keyframes water-fall-animation-1 {
+  0%,
+  100% {
+    border-radius: 46% 37% 23% 53% / 46% 42% 33% 30%;
+    background: linear-gradient(45deg, $primary 0%, $secondary 100%);
+  }
+  25% {
+    border-radius: 46% 54% 42% 58% / 21% 50% 50% 79%;
+  }
+  50% {
+    border-radius: 72% 28% 32% 68% / 50% 65% 35% 50%;
+    background: linear-gradient(45deg, $third 0%, $secondary 100%);
+  }
+  75% {
+    border-radius: 46% 54% 62% 38% / 58% 71% 29% 42%;
+  }
+}
+
+@keyframes water-fall-animation-2 {
+  0%,
+  100% {
+    border-radius: 27% 73% 43% 56% / 50% 44% 56% 50%;
+    background: linear-gradient(45deg, $primary 0%, $secondary 100%);
+  }
+
+  10% {
+    border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;
+  }
+
+  20% {
+    border-radius: 67% 33% 47% 53% / 37% 20% 80% 63%;
+  }
+
+  30% {
+    border-radius: 39% 61% 47% 53% / 37% 40% 60% 63%;
+  }
+
+  40% {
+    border-radius: 39% 61% 82% 18% / 74% 40% 60% 26%;
+  }
+
+  50% {
+    border-radius: 100%;
+    background: linear-gradient(45deg, $third 0%, $secondary 100%);
+  }
+
+  60% {
+    border-radius: 50% 50% 53% 47% / 72% 69% 31% 28%;
+  }
+
+  70% {
+    border-radius: 50% 50% 53% 47% / 26% 22% 78% 74%;
+  }
+
+  80% {
+    border-radius: 50% 50% 53% 47% / 26% 69% 31% 74%;
+  }
+
+  90% {
+    border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
+  }
+}
+
+@keyframes water-fall-animation-3 {
+  0%,
+  100% {
+    border-radius: 26% 74% 49% 51% / 21% 51% 49% 79%;
+    background: linear-gradient(45deg, $primary 0%, $secondary 100%);
+  }
+  25% {
+    border-radius: 74% 26% 50% 50% / 53% 29% 71% 47%;
+  }
+  50% {
+    border-radius: 48% 52% 28% 72% / 45% 71% 29% 55%;
+    background: linear-gradient(45deg, $third 0%, $secondary 100%);
+  }
+  75% {
+    border-radius: 48% 52% 76% 24% / 70% 49% 51% 30%;
+  }
+}
+
+@keyframes water-fall-animation-4 {
+  0%,
+  100% {
+    border-radius: 51% 49% 34% 66% / 39% 66% 34% 61%;
+    background: linear-gradient(45deg, $primary 0%, $secondary 100%);
+  }
+  10% {
+    border-radius: 39% 61% 38% 62% / 53% 54% 46% 47%;
+  }
+  20% {
+    border-radius: 56% 44% 52% 48% / 57% 35% 65% 43%;
+  }
+  30% {
+    border-radius: 41% 59% 45% 55% / 33% 56% 44% 67%;
+  }
+  40% {
+    border-radius: 46% 54% 60% 40% / 55% 74% 26% 45%;
+  }
+  50% {
+    border-radius: 44% 56% 22% 78% / 31% 74% 26% 69%;
+    background: linear-gradient(45deg, $third 0%, $secondary 100%);
+  }
+  60% {
+    border-radius: 31% 69% 32% 68% / 31% 71% 29% 69%;
+  }
+  70% {
+    border-radius: 44% 56% 60% 40% / 63% 36% 64% 37%;
+  }
+  80% {
+    border-radius: 46% 54% 38% 62% / 44% 48% 52% 56%;
+  }
+  90% {
+    border-radius: 66% 34% 57% 43% / 49% 51% 49% 51%;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-70px);
+  }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+.hide {
+  animation: hide $appearTime1 forwards ease-in-out;
+}
+.appear {
+  animation: appear $appearTime forwards ease-in-out;
+}
+.appear1 {
+  animation: appear $appearTime1 forwards ease-in-out;
+}
+.bounce {
+  animation: bounce 1s forwards;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+.water-fall-animation-1 {
+  animation: water-fall-animation-1 $waterAnimationDurationLong ease infinite;
+}
+.water-fall-animation-2 {
+  animation: water-fall-animation-2 $waterAnimationDurationLong ease infinite;
+}
+.water-fall-animation-3 {
+  animation: water-fall-animation-3 $waterAnimationDurationLong ease infinite;
+}
+.water-fall-animation-4 {
+  animation: water-fall-animation-4 $waterAnimationDurationLong ease infinite;
+}
+.fade-out {
+  animation: fade-out $textAnimationDuration ease-in-out forwards;
+}
+.fade-in {
+  animation: fade-in $textAnimationDuration ease-in-out forwards;
+}
+.active {
+  display: block !important;
+}
+.icon-size {
+  width: $iconSize;
+  height: $iconSize;
+}
