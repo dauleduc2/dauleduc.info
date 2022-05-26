@@ -7,11 +7,30 @@ import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import UserHelperText from "./components/UserHelperText";
 
 const Home: NextPage = () => {
-  const [isNavOpenning, setIsNavOpenning] = React.useState<boolean>(false);
-  const [componentOpenning, setComponentOpenning] =
+  const [isNavOpening, setIsNavOpening] = React.useState<boolean>(false);
+  const [isUserHelperOpening, setIsUserHelperOpening] = React.useState(false);
+  const [componentOpening, setComponentOpening] =
     React.useState<selectionsType | null>(null);
+  const _checkingViewPort = () => {
+    if (window.innerHeight > window.innerWidth) {
+      setIsUserHelperOpening(true);
+    } else {
+      setIsUserHelperOpening(false);
+    }
+  };
+  React.useEffect(() => {
+    _checkingViewPort();
+    window.addEventListener("resize", () => {
+      _checkingViewPort();
+    });
+    return () => {
+      window.removeEventListener("resize", () => {});
+    };
+  }, []);
+
   return (
     <div>
       <Head>
@@ -21,6 +40,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
+        <UserHelperText isOpening={isUserHelperOpening} />
         <video
           id="background-video"
           className="vide-background"
@@ -36,24 +56,31 @@ const Home: NextPage = () => {
         </video>
         <div className="container-c">
           <Nav
-            isOpenning={isNavOpenning}
-            setComponentOpenning={setComponentOpenning}
+            isOpening={isNavOpening}
+            setComponentOpening={setComponentOpening}
           />
-          <div className="content-section">
-            <TextShow setIsNavOpenning={setIsNavOpenning} />
+          <div className="flex flex-col content-section">
+            <TextShow setIsNavOpening={setIsNavOpening} />
           </div>
 
-          {componentOpenning === "About Me" && (
-            <AboutMe setComponentOpenning={setComponentOpenning} />
+          {componentOpening === "About Me" && (
+            <AboutMe setComponentOpening={setComponentOpening} />
           )}
-          {componentOpenning === "Contact me" && (
-            <ContactMe setComponentOpenning={setComponentOpenning} />
+          {componentOpening === "Contact me" && (
+            <ContactMe setComponentOpening={setComponentOpening} />
           )}
-          {componentOpenning === "Projects" && (
-            <Projects setComponentOpenning={setComponentOpenning} />
+          {componentOpening === "Projects" && (
+            <Projects setComponentOpening={setComponentOpening} />
           )}
-          {componentOpenning === "Skills" && (
-            <Skills setComponentOpenning={setComponentOpenning} />
+          {componentOpening === "Skills" && (
+            <Skills setComponentOpening={setComponentOpening} />
+          )}
+
+          {componentOpening && (
+            <div
+              className="fixed inset-0 z-10 w-screen h-screen cursor-pointer bg-black/80"
+              onClick={() => setComponentOpening(null)}
+            ></div>
           )}
         </div>
       </main>

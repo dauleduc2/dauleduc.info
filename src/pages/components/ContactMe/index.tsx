@@ -3,16 +3,16 @@ import { selectionsType } from "../Nav";
 import { MailIcon } from "@heroicons/react/solid";
 
 interface ContactMeProps {
-  setComponentOpenning: React.Dispatch<
+  setComponentOpening: React.Dispatch<
     React.SetStateAction<selectionsType | null>
   >;
 }
 
 const ContactMe: React.FunctionComponent<ContactMeProps> = ({
-  setComponentOpenning,
+  setComponentOpening,
 }) => {
   return (
-    <div className="section contact-me-section appear1">
+    <div className="z-20 section contact-me-section appear1">
       <h1 className="text-2xl font-bold text-center text-red-500 ">
         Get in touch with me
       </h1>
@@ -81,7 +81,7 @@ const ContactMe: React.FunctionComponent<ContactMeProps> = ({
       <div
         className="close-button"
         onClick={() => {
-          setComponentOpenning(null);
+          setComponentOpening(null);
         }}
       >
         <CloseIcon />

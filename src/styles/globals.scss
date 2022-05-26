@@ -19,6 +19,14 @@ $closeIconColor: #6b7280;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "courage";
+  src: url("/font/COURAGE.otf");
+}
+@font-face {
+  font-family: "fresh";
+  src: url("/font/Fresh Avocado.otf");
+}
 
 * {
   margin: 0;
@@ -29,10 +37,14 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+.head-font {
+  font-family: "courage";
 }
 
+.title-font {
+  font-family: "fresh";
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -117,15 +129,22 @@ a {
       line-height: 60px;
       position: relative;
       .text {
-        // border: solid 4px red;
         position: absolute;
-        // border: solid 1px red;
-        // transform: rotateX(-90deg);
         letter-spacing: 1px;
         display: none;
         color: white;
         font-size: 40px;
         bottom: 0;
+        height: $textHeight;
+      }
+      .text1 {
+        position: absolute;
+        letter-spacing: 1px;
+        color: white;
+        font-size: 14px;
+        text-overflow: wrap;
+        max-width: 400px;
+        bottom: -60px;
         height: $textHeight;
       }
     }
@@ -196,6 +215,7 @@ a {
     }
   }
 }
+
 .vide-background {
   position: fixed;
   top: 0;
@@ -203,6 +223,9 @@ a {
   right: 0;
   bottom: 0;
   z-index: -1;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
 }
 
 @keyframes fade-in {
