@@ -61,13 +61,6 @@ const TextShow: React.FunctionComponent<TextShowProps> = ({
           );
         })}
       </span>
-      {/* <span ref={textWrapper2} className="text-slide-show">
-        <p className="text1 ">
-          I'm a web developer with two years of learning technolgy about JS with
-          good knowledge of Object-oriented programming, Analysis, and Database
-          Design.
-        </p>
-      </span> */}
     </>
   );
 };

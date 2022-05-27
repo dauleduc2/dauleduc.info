@@ -137,16 +137,6 @@ a {
         bottom: 0;
         height: $textHeight;
       }
-      .text1 {
-        position: absolute;
-        letter-spacing: 1px;
-        color: white;
-        font-size: 14px;
-        text-overflow: wrap;
-        max-width: 400px;
-        bottom: -60px;
-        height: $textHeight;
-      }
     }
   }
   .section {
@@ -443,4 +433,13 @@ a {
 .icon-size {
   width: $iconSize;
   height: $iconSize;
+}
+
+@media screen and (orientation: landscape) and (max-device-width: 900px) {
+  .text {
+    font-size: 20px !important;
+  }
+  .content-section {
+    bottom: 30% !important;
+  }
 }
