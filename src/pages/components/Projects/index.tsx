@@ -2,21 +2,21 @@ import CloseIcon from "../icon/CloseIcon";
 import { selectionsType } from "../Nav";
 
 interface ProjectsProps {
-  setComponentOpenning: React.Dispatch<
+  setComponentOpening: React.Dispatch<
     React.SetStateAction<selectionsType | null>
   >;
 }
 
 const Projects: React.FunctionComponent<ProjectsProps> = ({
-  setComponentOpenning,
+  setComponentOpening,
 }) => {
   return (
-    <div className="section appear1">
+    <div className="z-20 section appear1">
       this is project section
       <div
         className="close-button"
         onClick={() => {
-          setComponentOpenning(null);
+          setComponentOpening(null);
         }}
       >
         <CloseIcon />

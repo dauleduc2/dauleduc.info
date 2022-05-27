@@ -2,21 +2,21 @@ import CloseIcon from "../icon/CloseIcon";
 import { selectionsType } from "../Nav";
 
 interface SkillsProps {
-  setComponentOpenning: React.Dispatch<
+  setComponentOpening: React.Dispatch<
     React.SetStateAction<selectionsType | null>
   >;
 }
 
 const Skills: React.FunctionComponent<SkillsProps> = ({
-  setComponentOpenning,
+  setComponentOpening,
 }) => {
   return (
-    <div className="section appear1">
+    <div className="z-20 section appear1">
       this is skills section
       <div
         className="close-button"
         onClick={() => {
-          setComponentOpenning(null);
+          setComponentOpening(null);
         }}
       >
         <CloseIcon />

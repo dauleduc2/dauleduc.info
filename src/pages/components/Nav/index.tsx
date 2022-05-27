@@ -4,25 +4,25 @@ const selections = ["About Me", "Projects", "Skills", "Contact me"] as const;
 export type selectionsType = typeof selections[number];
 
 interface NavProps {
-  isOpenning: boolean;
-  setComponentOpenning: React.Dispatch<
+  isOpening: boolean;
+  setComponentOpening: React.Dispatch<
     React.SetStateAction<selectionsType | null>
   >;
 }
 const Nav: React.FunctionComponent<NavProps> = ({
-  isOpenning,
-  setComponentOpenning,
+  isOpening,
+  setComponentOpening,
 }) => {
   // const [selections, setSelections] = React.useState<string[]>();
 
   const wrapperEl = React.useRef<HTMLDivElement>(null);
 
   const onOpen = (text: selectionsType) => {
-    setComponentOpenning(text);
+    setComponentOpening(text);
   };
-  if (isOpenning)
+  if (isOpening)
     return (
-      <div ref={wrapperEl} className="nav appear">
+      <div ref={wrapperEl} className="nav appear title-font">
         {selections.map((selection, index) => (
           <div
             onClick={() => onOpen(selection as selectionsType)}

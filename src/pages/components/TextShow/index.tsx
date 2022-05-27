@@ -2,21 +2,22 @@ import * as React from "react";
 import useInterval from "../../hooks/useInterval";
 
 interface TextShowProps {
-  setIsNavOpenning: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsNavOpening: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const TextShow: React.FunctionComponent<TextShowProps> = ({
-  setIsNavOpenning,
+  setIsNavOpening,
 }) => {
   const [textList, setTextList] = React.useState<string[]>([
     "Hi!",
     "Welcome to my profile",
-    "My name is Đức",
+    "My name is Duc",
   ]);
   const [currentIndex, setCurrentIndex] = React.useState(0);
-  const textWrapper = React.useRef<HTMLSpanElement>(null);
+  const textWrapper1 = React.useRef<HTMLSpanElement>(null);
+  // const textWrapper2 = React.useRef<HTMLSpanElement>(null);
   useInterval(() => {
-    const textList = textWrapper.current?.childNodes;
+    const textList = textWrapper1.current?.childNodes;
     if (textList) {
       //if have next item
       if (currentIndex + 1 < textList.length) {
@@ -35,12 +36,13 @@ const TextShow: React.FunctionComponent<TextShowProps> = ({
         nextEl.classList.add("active", "fade-in");
         currentEl.classList.add("active", "fade-out");
       } else {
-        setIsNavOpenning(true);
+        setIsNavOpening(true);
+        // const textList2 = textWrapper2.current?.childNodes;
       }
     }
   }, 2000);
   React.useEffect(() => {
-    const textList = textWrapper.current?.childNodes;
+    const textList = textWrapper1.current?.childNodes;
     if (textList && textList.length > 0) {
       const firstEle = textList[0] as HTMLParagraphElement;
       firstEle.classList.add("active", "fade-in");
@@ -49,15 +51,24 @@ const TextShow: React.FunctionComponent<TextShowProps> = ({
   }, []);
 
   return (
-    <span ref={textWrapper} className="text-slide-show appear">
-      {textList.map((text) => {
-        return (
-          <p className="text" key={text}>
-            {text}
-          </p>
-        );
-      })}
-    </span>
+    <>
+      <span ref={textWrapper1} className="text-slide-show appear">
+        {textList.map((text) => {
+          return (
+            <p className="text head-font" key={text}>
+              {text}
+            </p>
+          );
+        })}
+      </span>
+      {/* <span ref={textWrapper2} className="text-slide-show">
+        <p className="text1 ">
+          I'm a web developer with two years of learning technolgy about JS with
+          good knowledge of Object-oriented programming, Analysis, and Database
+          Design.
+        </p>
+      </span> */}
+    </>
   );
 };
 
