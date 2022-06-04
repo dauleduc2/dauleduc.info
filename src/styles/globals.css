@@ -268,8 +268,8 @@ a {
 .close-button {
   color: #6b7280;
   cursor: pointer;
-  right: 20px;
-  top: 20px;
+  right: 10px;
+  top: 10px;
   position: absolute;
   color: #94a3b8;
 }
@@ -757,5 +757,63 @@ a {
   .nav {
     top: 15% !important;
   }
+}
+
+.next-project-button-wrapper:hover .next-project-button {
+  background-color: #4338ca;
+}
+
+.skill-box1:hover {
+  background: #ff512f;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#ffd89e), to(#ef6b0e));
+  background: linear-gradient(to right, #ffd89e, #ef6b0e);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.skill-box2:hover {
+  background: #2193b0;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#6dd5ed), to(#2193b0));
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.skill-box3:hover {
+  background: #fbd3e9;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#fbd3e9), to(#bb377d));
+  background: linear-gradient(to right, #fbd3e9, #bb377d);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.skill-box4:hover {
+  background: #1d976c;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#93f9b9), to(#1d976c));
+  background: linear-gradient(to right, #93f9b9, #1d976c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.skill-box5:hover {
+  background: #e1eec3;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#e1eec3), to(#f05053));
+  background: linear-gradient(to right, #e1eec3, #f05053);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.skill-box6:hover {
+  background: #cac531;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#f3f9a7), to(#cac531));
+  background: linear-gradient(to right, #f3f9a7, #cac531);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 /*# sourceMappingURL=globals.css.map */

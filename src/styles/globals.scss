@@ -198,8 +198,8 @@ a {
 .close-button {
   color: $closeIconColor;
   cursor: pointer;
-  right: 20px;
-  top: 20px;
+  right: 10px;
+  top: 10px;
   position: absolute;
   color: #94a3b8;
 }
@@ -465,5 +465,111 @@ a {
   }
   .nav {
     top: 15% !important;
+  }
+}
+
+.next-project-button-wrapper:hover .next-project-button {
+  background-color: rgb(67, 56, 202);
+}
+
+.skill-box1 {
+}
+.skill-box1:hover {
+  background: #ff512f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffd89e,
+    #ef6b0e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffd89e,
+    #ef6b0e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .skill-title1 {
+  }
+}
+.skill-box2:hover {
+  background: #2193b0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6dd5ed,
+    #2193b0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #6dd5ed,
+    #2193b0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .skill-title2 {
+  }
+}
+.skill-box3:hover {
+  background: #fbd3e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+
+    #fbd3e9 #bb377d
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+
+    #fbd3e9,
+    #bb377d
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .skill-title3 {
+  }
+}
+.skill-box4:hover {
+  background: #1d976c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #93f9b9,
+    #1d976c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #93f9b9,
+    #1d976c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .skill-title4 {
+  }
+}
+.skill-box5:hover {
+  background: #e1eec3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+
+    #e1eec3,
+    #f05053
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+
+    #e1eec3,
+    #f05053
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .skill-title5 {
+  }
+}
+.skill-box6:hover {
+  background: #cac531; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f3f9a7,
+    #cac531
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f3f9a7,
+    #cac531
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .skill-title6 {
   }
 }

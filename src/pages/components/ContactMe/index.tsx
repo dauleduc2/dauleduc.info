@@ -12,11 +12,12 @@ const ContactMe: React.FunctionComponent<ContactMeProps> = ({
   setComponentOpening,
 }) => {
   return (
-    <div className="z-20 section contact-me-section appear1">
+    <div className="z-20 bg-white w-full flex max-w-lg rounded-md  flex-col p-5 appear1">
       <h1 className="text-2xl font-bold text-center text-red-500 ">
         Get in touch with me
       </h1>
-      <div className="form">
+
+      <div className="form space-y-5">
         <div className="field-line">
           <label
             htmlFor="fullName"
@@ -62,22 +63,24 @@ const ContactMe: React.FunctionComponent<ContactMeProps> = ({
             Message
           </label>
           <div className="mt-1">
-            <input
-              type="text"
+            <textarea
+              placeholder="your message"
               name="message"
               id="message"
-              placeholder="your message"
+              cols={10}
+              rows={5}
               className="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            />
+            ></textarea>
           </div>
         </div>
         <button
           type="button"
-          className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-center text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          className="inline-flex w-full items-center justify-center px-4 py-2 text-sm font-medium text-center text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          Button text
+          Send
         </button>
       </div>
+
       <div
         className="close-button"
         onClick={() => {

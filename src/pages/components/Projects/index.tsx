@@ -37,35 +37,55 @@ const Projects: React.FunctionComponent<ProjectsProps> = ({
     }
   };
   return (
-    <div className="z-20 flex flex-col max-w-xl gap-0 p-4 space-y-3 bg-white lg:max-w-4xl lg:gap-5 appear1 lg:p-14 max-h-[80%]">
+    <div className="z-20 flex flex-col max-w-xl gap-0 p-4 space-y-3 bg-white lg:max-w-6xl lg:gap-5 appear1 lg:p-14 max-h-[80%]">
       <h1 className="text-lg font-bold text-center text-black lg:text-3xl">
         Clothes Shop
       </h1>
-      <div className="relative w-full overflow-hidden text-black border-2 border-black border-solid max-h-52 lg:max-h-max ">
-        <div
-          style={{ transform: `translateX(-${index * 100}%)` }}
-          className="flex w-full duration-700 "
-        >
-          {imageUrl.map((item) => (
-            <img src={item} />
-          ))}
+      <div className="flex space-x-5">
+        <div className="relative w-1/2 overflow-hidden text-black border-2 border-black border-solid max-h-52 lg:max-h-max ">
+          <div
+            style={{ transform: `translateX(-${index * 100}%)` }}
+            className="flex w-full duration-700 "
+          >
+            {imageUrl.map((item) => (
+              <img src={item} />
+            ))}
+          </div>
+          <div
+            onClick={() => _onScrollCarousel("right")}
+            className="absolute right-0 z-30 -translate-y-1/2 cursor-pointer text-black-500 w-7 h-7 top-1/2"
+          >
+            <ChevronRightIcon />
+          </div>
+          <div
+            onClick={() => _onScrollCarousel("left")}
+            className="absolute left-0 z-30 -translate-y-1/2 cursor-pointer text-black-500 w-7 h-7 top-1/2"
+          >
+            <ChevronLeftIcon />
+          </div>
         </div>
-        <div
-          onClick={() => _onScrollCarousel("right")}
-          className="absolute right-0 z-30 -translate-y-1/2 cursor-pointer text-black-500 w-7 h-7 top-1/2"
-        >
-          <ChevronRightIcon />
-        </div>
-        <div
-          onClick={() => _onScrollCarousel("left")}
-          className="absolute left-0 z-30 -translate-y-1/2 cursor-pointer text-black-500 w-7 h-7 top-1/2"
-        >
-          <ChevronLeftIcon />
+        <div className="relative w-1/2 next-project-button-wrapper">
+          <button
+            type="button"
+            className="absolute z-20 duration-300 next-project-button top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 "
+          >
+            Next project
+          </button>
+          <div className="cursor-pointer  w-full overflow-hidden shadow-xl border-black  max-h-52 lg:max-h-max ">
+            <div
+              style={{ transform: `translateX(-${index * 100}%)` }}
+              className="flex w-full duration-700 blur-sm"
+            >
+              {imageUrl.map((item) => (
+                <img src={item} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
       <div className="grid grid-cols-12 gap-5">
         <div className="col-span-4 p-2 space-y-1 text-black border border-black border-solid lg:p-5 lg:space-y-2">
-          <h2 className="text-base font-bold capitalize lg:text-2xl">
+          <h2 className="text-base font-bold capitalize lg:text-2xl text-center">
             Introduction
           </h2>
           <p className="text-xs lg:text-base">
@@ -74,7 +94,9 @@ const Projects: React.FunctionComponent<ProjectsProps> = ({
           </p>
         </div>
         <div className="col-span-4 p-2 space-y-1 text-black border border-black border-solid lg:p-5 lg:space-y-2">
-          <h2 className="text-base font-bold capitalize lg:text-2xl">Task</h2>
+          <h2 className="text-base font-bold capitalize lg:text-2xl text-center">
+            Task
+          </h2>
           <ul className="text-xs lg:text-base">
             <li>
               - Developing and maintaining both front-end back back-end
@@ -84,7 +106,7 @@ const Projects: React.FunctionComponent<ProjectsProps> = ({
           </ul>
         </div>
         <div className="col-span-4 p-2 space-y-1 text-black border border-black border-solid lg:p-5 lg:space-y-2">
-          <h2 className="text-base font-bold capitalize lg:text-2xl">
+          <h2 className="text-base text-center font-bold capitalize lg:text-2xl">
             Description
           </h2>
           <ul className="text-xs lg:text-base">
