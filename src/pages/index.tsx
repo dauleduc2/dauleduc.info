@@ -3,8 +3,10 @@ import Head from "next/head";
 import * as React from "react";
 import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
+import Nav, { selectionsType } from "./components/Nav";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import TextShow from "./components/TextShow";
 import UserHelperText from "./components/UserHelperText";
 
 const Home: NextPage = () => {

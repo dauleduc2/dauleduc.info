@@ -2,6 +2,7 @@ $space: 30px;
 $textAnimationDuration: 0.5s;
 $textHeight: 60px;
 $selectionSize: 170px;
+$selectionSizeMobile: 90px;
 $blue: #3b82f6;
 $background: #005;
 $primary: #88d5bf;
@@ -140,24 +141,13 @@ a {
     }
   }
   .section {
-    width: 50%;
-    height: 80%;
+    max-width: 50%;
+    max-height: 80%;
     border-radius: 15px;
     background-color: white;
     display: flex;
     color: white;
     position: relative;
-    .close-button {
-      color: $closeIconColor;
-      cursor: pointer;
-      right: 20px;
-      top: 20px;
-      position: absolute;
-      color: #94a3b8;
-    }
-    .close-button:hover {
-      color: #64748b;
-    }
   }
   .about-me-section {
   }
@@ -205,7 +195,17 @@ a {
     }
   }
 }
-
+.close-button {
+  color: $closeIconColor;
+  cursor: pointer;
+  right: 20px;
+  top: 20px;
+  position: absolute;
+  color: #94a3b8;
+}
+.close-button:hover {
+  color: #64748b;
+}
 .vide-background {
   position: fixed;
   top: 0;
@@ -437,9 +437,33 @@ a {
 
 @media screen and (orientation: landscape) and (max-device-width: 900px) {
   .text {
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
   .content-section {
-    bottom: 30% !important;
+    bottom: 21% !important;
+  }
+  .nav-selection {
+    width: $selectionSizeMobile !important;
+    height: $selectionSizeMobile !important;
+    font-size: 8px !important;
+  }
+  .nav-selection:nth-child(1) {
+    left: 0;
+    top: 20% !important;
+  }
+  .nav-selection:nth-child(2) {
+    top: 0;
+    left: 22% !important;
+  }
+  .nav-selection:nth-child(3) {
+    top: 0;
+    right: 22% !important;
+  }
+  .nav-selection:nth-child(4) {
+    right: 0;
+    top: 20% !important;
+  }
+  .nav {
+    top: 15% !important;
   }
 }

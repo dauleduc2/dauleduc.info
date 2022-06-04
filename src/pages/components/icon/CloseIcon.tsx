@@ -4,7 +4,7 @@ const CloseIcon: React.FunctionComponent<CloseIconProps> = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="icon-size"
+      className="w-5 h-5 lg:w-9 lg:h-9"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"

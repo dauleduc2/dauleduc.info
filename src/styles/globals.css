@@ -186,8 +186,8 @@ a {
 }
 
 .container-c .section {
-  width: 50%;
-  height: 80%;
+  max-width: 50%;
+  max-height: 80%;
   border-radius: 15px;
   background-color: white;
   display: -webkit-box;
@@ -195,19 +195,6 @@ a {
   display: flex;
   color: white;
   position: relative;
-}
-
-.container-c .section .close-button {
-  color: #6b7280;
-  cursor: pointer;
-  right: 20px;
-  top: 20px;
-  position: absolute;
-  color: #94a3b8;
-}
-
-.container-c .section .close-button:hover {
-  color: #64748b;
 }
 
 .container-c .contact-me-section {
@@ -276,6 +263,19 @@ a {
   max-width: 150px;
   -ms-flex-item-align: end;
       align-self: flex-end;
+}
+
+.close-button {
+  color: #6b7280;
+  cursor: pointer;
+  right: 20px;
+  top: 20px;
+  position: absolute;
+  color: #94a3b8;
+}
+
+.close-button:hover {
+  color: #64748b;
 }
 
 .vide-background {
@@ -728,10 +728,34 @@ a {
 
 @media screen and (orientation: landscape) and (max-device-width: 900px) {
   .text {
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
   .content-section {
-    bottom: 30% !important;
+    bottom: 21% !important;
+  }
+  .nav-selection {
+    width: 90px !important;
+    height: 90px !important;
+    font-size: 8px !important;
+  }
+  .nav-selection:nth-child(1) {
+    left: 0;
+    top: 20% !important;
+  }
+  .nav-selection:nth-child(2) {
+    top: 0;
+    left: 22% !important;
+  }
+  .nav-selection:nth-child(3) {
+    top: 0;
+    right: 22% !important;
+  }
+  .nav-selection:nth-child(4) {
+    right: 0;
+    top: 20% !important;
+  }
+  .nav {
+    top: 15% !important;
   }
 }
 /*# sourceMappingURL=globals.css.map */
