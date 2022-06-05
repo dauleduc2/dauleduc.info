@@ -13,8 +13,6 @@ const Nav: React.FunctionComponent<NavProps> = ({
   isOpening,
   setComponentOpening,
 }) => {
-  // const [selections, setSelections] = React.useState<string[]>();
-
   const wrapperEl = React.useRef<HTMLDivElement>(null);
 
   const onOpen = (text: selectionsType) => {
@@ -23,15 +21,30 @@ const Nav: React.FunctionComponent<NavProps> = ({
   if (isOpening)
     return (
       <div ref={wrapperEl} className="nav appear title-font">
-        {selections.map((selection, index) => (
-          <div
-            onClick={() => onOpen(selection as selectionsType)}
-            key={selection}
-            className={`nav-selection water-fall-animation-${index + 1}`}
-          >
-            {selection}
-          </div>
-        ))}
+        {selections.map((selection, index) => {
+          if (selection === "Projects") {
+            return (
+              <a
+                href="https://github.com/dauleduc2"
+                target="_blank"
+                key={selection}
+                className={`nav-selection water-fall-animation-${index + 1}`}
+              >
+                {selection}
+              </a>
+            );
+          } else {
+            return (
+              <div
+                onClick={() => onOpen(selection as selectionsType)}
+                key={selection}
+                className={`nav-selection water-fall-animation-${index + 1}`}
+              >
+                {selection}
+              </div>
+            );
+          }
+        })}
       </div>
     );
   return <></>;

@@ -1,6 +1,7 @@
 import CloseIcon from "../icon/CloseIcon";
 import { selectionsType } from "../Nav";
 import * as React from "react";
+import SkillBox from "../skillBox";
 
 interface SkillsProps {
   setComponentOpening: React.Dispatch<
@@ -8,7 +9,7 @@ interface SkillsProps {
   >;
 }
 type skill =
-  | "Programming Language"
+  | "Language"
   | "Front end"
   | "Backend"
   | "General skills"
@@ -18,97 +19,149 @@ const Skills: React.FunctionComponent<SkillsProps> = ({
   setComponentOpening,
 }) => {
   const [isOpening, setIsOpening] = React.useState<skill[]>([]);
-  const _onClick = (type: skill) => {
-    if (isOpening.includes(type))
-      for (var i = isOpening.length - 1; i >= 0; i--) {
-        if (isOpening[i] === type) {
-          isOpening.splice(i, 1);
-        }
-      }
-    else setIsOpening((prev) => [...prev, type]);
-  };
+
   return (
-    <div className="relative z-20 grid w-full max-w-xl grid-cols-3 gap-5 text-center bg-white rounded-md p-14 lg:max-w-4xl lg:p-10 appear1">
-      <div
-        onClick={() => _onClick("Programming Language")}
-        className={`bg-gray-500 relative shadow-xl  h-60  skill-box1  cursor-pointer text-white ${
-          isOpening.includes("Programming Language") ? "gradien" : ""
-        }`}
+    <div className="relative z-20 grid w-full max-w-xl grid-cols-3 gap-3 p-2 text-center bg-white rounded-md lg:gap-5 lg:max-w-5xl lg:p-10 appear1 max-h-[95%]">
+      <SkillBox
+        index={0}
+        isOpening={isOpening}
+        setIsOpening={setIsOpening}
+        title="Language"
       >
-        <h1
-          className={`text-xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  duration-500 skill-title1 ${
-            isOpening.includes("Programming Language") && "top-10"
-          }`}
-        >
-          Programming Language
-        </h1>
-        <div className=""></div>
-      </div>
-      <div
-        onClick={() => _onClick("Front end")}
-        className="relative text-white bg-gray-500 shadow-xl cursor-pointer h-60 skill-box2"
+        <ul className="text-left text-black mt-9 lg:mt-14 ">
+          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-1 animation-delay-500">
+            - Javascript / Typescript
+          </li>
+          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-2 animation-delay-1000">
+            - Java
+          </li>
+        </ul>
+      </SkillBox>
+      <SkillBox
+        index={1}
+        isOpening={isOpening}
+        setIsOpening={setIsOpening}
+        title="Front end"
       >
-        <h1
-          className={`text-xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  duration-500 skill-title2 ${
-            isOpening.includes("Front end") && "top-10"
-          }`}
-        >
-          Front end
-        </h1>
-        <div className=""></div>
-      </div>
-      <div
-        onClick={() => _onClick("Backend")}
-        className="relative text-white bg-gray-500 shadow-xl cursor-pointer h-60 skill-box3"
+        <div className="flex flex-row space-x-4 lg:space-x-0 lg:space-y-2 lg:flex-col">
+          <div className="w-1/2 lg:w-full mt-9 lg:mt-14">
+            <h2 className="text-xs font-semibold text-left text-black opacity-0 fade-in-from-bottom-1 lg:text-base">
+              Framework
+            </h2>
+            <ul className="mt-0 text-left text-black ">
+              <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-2 animation-delay-500">
+                - ReactJS
+              </li>
+              <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-3 animation-delay-1000">
+                - NextJS
+              </li>
+            </ul>
+          </div>
+
+          <div className="w-1/2 lg:w-full mt-9 lg:mt-0">
+            <h2 className="text-xs font-semibold text-left text-black opacity-0 fade-in-from-bottom-4 lg:text-base">
+              Library
+            </h2>
+            <ul className="text-left text-black ">
+              <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-5 animation-delay-500">
+                - Redux
+              </li>
+              <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-6 animation-delay-1000">
+                - Tailwind
+              </li>
+              <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-7 animation-delay-1000">
+                - Socket.io
+              </li>
+            </ul>
+          </div>
+        </div>
+      </SkillBox>
+      <SkillBox
+        index={2}
+        isOpening={isOpening}
+        setIsOpening={setIsOpening}
+        title="Backend"
       >
-        <h1
-          className={`text-xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  duration-500 skill-title3 ${
-            isOpening.includes("Backend") && "top-10"
-          }`}
-        >
-          Backend
-        </h1>
-        <div className=""></div>
-      </div>
-      <div
-        onClick={() => _onClick("General skills")}
-        className="relative text-white bg-gray-500 shadow-xl cursor-pointer h-60 skill-box4"
+        <>
+          <div className="flex flex-row space-x-4 lg:space-x-0 lg:space-y-2 lg:flex-col">
+            <div className="w-1/2 lg:w-full mt-9 lg:mt-14">
+              <h2 className="text-xs font-semibold text-left text-black opacity-0 fade-in-from-bottom-1 lg:text-base">
+                Framework
+              </h2>
+              <ul className="mt-0 text-left text-black ">
+                <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-2 animation-delay-500">
+                  - ExpressJS
+                </li>
+                <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-3 animation-delay-1000">
+                  - NestJS
+                </li>
+              </ul>
+            </div>
+
+            <div className="w-1/2 lg:w-full mt-9 lg:mt-0">
+              <h2 className="text-xs font-semibold text-left text-black opacity-0 fade-in-from-bottom-4 lg:text-base">
+                Library
+              </h2>
+              <ul className="text-left text-black ">
+                <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-5 animation-delay-500">
+                  - Socket.io
+                </li>
+                <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-6 animation-delay-1000">
+                  - Jest
+                </li>
+              </ul>
+            </div>
+          </div>
+        </>
+      </SkillBox>
+      <SkillBox
+        index={3}
+        isOpening={isOpening}
+        setIsOpening={setIsOpening}
+        title="General skills"
       >
-        <h1
-          className={`text-xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  duration-500 skill-title4 ${
-            isOpening.includes("General skills") && "top-10"
-          }`}
-        >
-          General skills
-        </h1>
-        <div className=""></div>
-      </div>
-      <div
-        onClick={() => _onClick("Database")}
-        className="relative text-white bg-gray-500 shadow-xl cursor-pointer h-60 skill-box5"
+        <ul className="text-left text-black mt-9 lg:mt-14 ">
+          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-1 animation-delay-500">
+            - Git
+          </li>
+        </ul>
+      </SkillBox>
+      <SkillBox
+        index={4}
+        isOpening={isOpening}
+        setIsOpening={setIsOpening}
+        title="Database"
       >
-        <h1
-          className={`text-xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  duration-500 skill-title5 ${
-            isOpening.includes("Database") && "top-10"
-          }`}
-        >
-          Database
-        </h1>
-        <div className=""></div>
-      </div>
-      <div
-        onClick={() => _onClick("Devops")}
-        className="relative text-white bg-gray-500 shadow-xl cursor-pointer h-60 skill-box6"
+        <ul className="text-left text-black mt-9 lg:mt-14 ">
+          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-1 animation-delay-500">
+            - MongoDB
+          </li>
+          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-2 animation-delay-1000">
+            - MySQL
+          </li>
+          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-3 animation-delay-1000">
+            - Microsoft SQL
+          </li>
+          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-4 animation-delay-1000">
+            - Redis
+          </li>
+        </ul>
+      </SkillBox>
+      <SkillBox
+        index={5}
+        isOpening={isOpening}
+        setIsOpening={setIsOpening}
+        title="Devops"
       >
-        <h1
-          className={`text-xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  duration-500 skill-title6 ${
-            isOpening.includes("Devops") && "top-10"
-          }`}
-        >
-          Devops
-        </h1>
-        <div className=""></div>
-      </div>
+        <ul className="text-left text-black mt-9 lg:mt-14 ">
+          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-1 animation-delay-500">
+            - Github Action
+          </li>
+          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-2 animation-delay-1000">
+            - Docker
+          </li>
+        </ul>
+      </SkillBox>
 
       <div
         className="close-button"

@@ -353,29 +353,6 @@ a {
   }
 }
 
-@keyframes bounce {
-  0% {
-    transform: scale(1, 1) translateY(0);
-  }
-  10% {
-    transform: scale(1.1, 0.9) translateY(0);
-  }
-  30% {
-    transform: scale(0.9, 1.1) translateY(-70px);
-  }
-  50% {
-    transform: scale(1.05, 0.95) translateY(0);
-  }
-  57% {
-    transform: scale(1, 1) translateY(-7px);
-  }
-  64% {
-    transform: scale(1, 1) translateY(0);
-  }
-  100% {
-    transform: scale(1, 1) translateY(0);
-  }
-}
 @keyframes appear {
   0% {
     opacity: 0;
@@ -386,28 +363,44 @@ a {
     opacity: 1;
   }
 }
-@keyframes hide {
+
+@keyframes fade-in-from-left {
   0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
+    transform: translateX(-100%);
     opacity: 0;
   }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
-.hide {
-  animation: hide $appearTime1 forwards ease-in-out;
+@keyframes fade-in-from-bottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
+
+.fade-in-from-left {
+  animation: fade-in-from-left 0.5s forwards ease-in-out;
+}
+
+@for $i from 1 through 8 {
+  .fade-in-from-bottom-#{$i} {
+    animation: fade-in-from-bottom 0.5s forwards ease-in-out;
+    animation-delay: calc(#{$i} * 0.3s);
+  }
+}
+
 .appear {
   animation: appear $appearTime forwards ease-in-out;
 }
 .appear1 {
   animation: appear $appearTime1 forwards ease-in-out;
-}
-.bounce {
-  animation: bounce 1s forwards;
-  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
 }
 .water-fall-animation-1 {
   animation: water-fall-animation-1 $waterAnimationDurationLong ease infinite;
@@ -474,6 +467,7 @@ a {
 
 .skill-box1 {
 }
+
 .skill-box1:hover {
   background: #ff512f; /* fallback for old browsers */
   background: -webkit-linear-gradient(
