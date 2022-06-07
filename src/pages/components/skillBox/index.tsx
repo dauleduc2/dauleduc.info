@@ -13,7 +13,7 @@ type Skill =
   | "Devops";
 const SkillBox: React.FunctionComponent<SkillBoxProps> = ({
   index,
-  isOpening,
+  isOpening = [],
   setIsOpening,
   title,
   children,

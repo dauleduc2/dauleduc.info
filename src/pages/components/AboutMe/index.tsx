@@ -72,9 +72,9 @@ const AboutMe: React.FunctionComponent<AboutMeProps> = ({
               summary
             </h2>
             <p className="text-sm lg:text-xl">
-              I'm a web developer with two years of learning technolgy about JS
-              with good knowledge of Object-oriented programming, Analysis, and
-              Database Design.
+              I&apos;m a web developer with two years of learning technolgy
+              about JS with good knowledge of Object-oriented programming,
+              Analysis, and Database Design.
             </p>
           </div>
           <div className="flex flex-col space-y-1 lg:space-y-2">

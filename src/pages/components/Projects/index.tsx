@@ -48,7 +48,7 @@ const Projects: React.FunctionComponent<ProjectsProps> = ({
             className="flex w-full duration-700 "
           >
             {imageUrl.map((item) => (
-              <img src={item} />
+              <img key={item} src={item} />
             ))}
           </div>
           <div
@@ -77,7 +77,7 @@ const Projects: React.FunctionComponent<ProjectsProps> = ({
               className="flex w-full duration-700 blur-sm"
             >
               {imageUrl.map((item) => (
-                <img src={item} />
+                <img key={item} src={item} />
               ))}
             </div>
           </div>

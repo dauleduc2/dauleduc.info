@@ -27,6 +27,7 @@ const Nav: React.FunctionComponent<NavProps> = ({
               <a
                 href="https://github.com/dauleduc2"
                 target="_blank"
+                rel="noreferrer"
                 key={selection}
                 className={`nav-selection water-fall-animation-${index + 1}`}
               >

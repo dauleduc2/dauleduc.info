@@ -6,7 +6,8 @@
     "start:dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export"
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.24",
