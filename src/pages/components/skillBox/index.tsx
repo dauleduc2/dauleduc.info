@@ -30,7 +30,7 @@ const SkillBox: React.FunctionComponent<SkillBoxProps> = ({
   return (
     <div
       onClick={() => _onClick(title)}
-      className={`relative shadow-xl h-32 lg:h-72 cursor-pointer overflow-hidden text-white p-4 lg:p-5 ${
+      className={`relative shadow-xl h-40 lg:h-72 cursor-pointer overflow-hidden text-white p-4 lg:p-5 ${
         isOpening.includes(title)
           ? " bg-white "
           : `bg-gray-500 skill-box${index + 1}`
