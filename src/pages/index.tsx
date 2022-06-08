@@ -35,7 +35,7 @@ const Home: NextPage = () => {
     <div>
       <NextSeo
         title={`Dau Le Duc`}
-        description="welcome to my profile"
+        description="Welcome to my profile"
         openGraph={{
           images: [
             {
