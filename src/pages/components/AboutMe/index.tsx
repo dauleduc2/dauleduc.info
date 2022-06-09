@@ -92,7 +92,9 @@ const AboutMe: React.FunctionComponent<AboutMeProps> = ({
             <h2 className="text-base font-bold uppercase lg:text-2xl">
               LANGUAGES
             </h2>
-            <p className="text-sm lg:text-xl">ACADEMIC PREPARATORY ENGLISH</p>
+            <p className="text-sm lg:text-xl">
+              ACADEMIC PREPARATORY ENGLISH Degree
+            </p>
           </div>
         </div>
       </div>
