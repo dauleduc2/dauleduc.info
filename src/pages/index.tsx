@@ -9,7 +9,7 @@ import Nav, { selectionsType } from "./components/Nav";
 import Skills from "./components/Skills";
 import TextShow from "./components/TextShow";
 import UserHelperText from "./components/UserHelperText";
-
+import "react-toastify/dist/ReactToastify.css";
 const Home: NextPage = () => {
   const [isNavOpening, setIsNavOpening] = React.useState<boolean>(false);
   const [isUserHelperOpening, setIsUserHelperOpening] = React.useState(false);
@@ -61,11 +61,6 @@ const Home: NextPage = () => {
         <title>Dau Le Duc</title>
         <meta name="description" content="Welcome to my profile!" />
         <link rel="icon" href="/favicon.ico" />
-        {/* <meta property="og:type" content="portfolio" />
-        <meta property="og:url" content="https://dauleduc.info" />
-        <meta property="og:title" content="Dau Le Duc portfolio" />
-        <meta property="og:description" content="Welcome to my profile" />
-        <meta property="og:image" content="/avatar.jpg" /> */}
       </Head>
 
       <main>

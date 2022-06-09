@@ -133,16 +133,13 @@ const Skills: React.FunctionComponent<SkillsProps> = ({
         title="Database"
       >
         <ul className="text-left text-black mt-9 lg:mt-14 ">
-          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-1 animation-delay-500">
-            - MongoDB
-          </li>
-          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-2 animation-delay-1000">
+          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-1 animation-delay-1000">
             - MySQL
           </li>
-          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-3 animation-delay-1000">
+          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-2 animation-delay-1000">
             - Microsoft SQL
           </li>
-          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-4 animation-delay-1000">
+          <li className="text-xs duration-500 opacity-0 lg:text-base fade-in-from-bottom-3 animation-delay-1000">
             - Redis
           </li>
         </ul>
