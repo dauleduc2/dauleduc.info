@@ -55,7 +55,7 @@ const TextShow: React.FunctionComponent<TextShowProps> = ({
       <span ref={textWrapper1} className="text-slide-show appear">
         {textList.map((text) => {
           return (
-            <p className="text head-font" key={text}>
+            <p className="text title-font" key={text}>
               {text}
             </p>
           );

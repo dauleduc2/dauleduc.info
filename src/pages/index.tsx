@@ -93,9 +93,7 @@ const Home: NextPage = () => {
           {componentOpening === "Contact me" && (
             <ContactMe setComponentOpening={setComponentOpening} />
           )}
-          {/* {componentOpening === "Projects" && (
-            <Projects setComponentOpening={setComponentOpening} />
-          )} */}
+
           {componentOpening === "Skills" && (
             <Skills setComponentOpening={setComponentOpening} />
           )}
