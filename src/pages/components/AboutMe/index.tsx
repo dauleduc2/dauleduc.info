@@ -91,7 +91,8 @@ const AboutMe: React.FunctionComponent<AboutMeProps> = ({
               LANGUAGES
             </h2>
             <p className="text-sm lg:text-xl">
-              Academic Preparatory English degree
+              First prize of public speaking ( organized by English Funny Club
+              at FPT University )
             </p>
           </div>
           <div className="flex flex-col space-y-1 lg:space-y-2">
@@ -99,8 +100,7 @@ const AboutMe: React.FunctionComponent<AboutMeProps> = ({
               CERTIFICATE
             </h2>
             <p className="text-sm lg:text-xl">
-              First prize of public speaking ( organized by English Funny Club
-              at FPT University )
+              Academic Preparatory English degree
             </p>
           </div>
         </div>
