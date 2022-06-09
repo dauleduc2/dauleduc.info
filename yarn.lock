@@ -227,6 +227,13 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
 
+"@types/react-toastify@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@types/react-toastify/-/react-toastify-4.1.0.tgz#604e712855dd677916d5c66af595d3b590f5d95d"
+  integrity sha512-u7Ie/7LHBsPVz/iJxi/WlRDS7Gh9csCJACTDXx+pSLuZCm94xpkwzhM3jV1L5ZxP/in0Gp2tFbJ91VrSGr1gyQ==
+  dependencies:
+    react-toastify "*"
+
 "@types/react@17.0.40":
   version "17.0.40"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.40.tgz#dc010cee6254d5239a138083f3799a16638e6bad"
@@ -538,6 +545,11 @@ chokidar@^3.5.3:
     readdirp "~3.6.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+clsx@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
 color-convert@^1.9.0:
   version "1.9.3"
@@ -1815,6 +1827,13 @@ react-simple-image-viewer@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-simple-image-viewer/-/react-simple-image-viewer-1.2.1.tgz#9e95595d0a608bc4e95637a97bedf14611ee7153"
   integrity sha512-HMFWV94K0fY9XCECvu/1ilomJQkFxiFv3DcZNHspgZFp+aUPFR/UEtYb4oDkGVidOZtErQZHr87dTvC6Mmo79g==
+
+react-toastify@*, react-toastify@^9.0.4:
+  version "9.0.4"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-9.0.4.tgz#016d0f3dae2f6e9c01eb36bd1d2c31b0a6de4434"
+  integrity sha512-MYmJ1V5F6DEU+TFxBb+pGGsveFPt4tjr4yK+TopXkU3sXPD9F2tFhX+G2HBLZpqObT2O6Z9jbXSg3JpaxuWtWw==
+  dependencies:
+    clsx "^1.1.1"
 
 react@17.0.2:
   version "17.0.2"

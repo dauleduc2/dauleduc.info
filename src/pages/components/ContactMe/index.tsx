@@ -4,6 +4,7 @@ import { MailIcon } from "@heroicons/react/solid";
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { toast } from "react-toastify";
 interface ContactMeProps {
   setComponentOpening: React.Dispatch<
     React.SetStateAction<selectionsType | null>
@@ -27,14 +28,20 @@ const ContactMe: React.FunctionComponent<ContactMeProps> = ({
       setRows(3);
     }
   }, []);
-  const { register, handleSubmit } = useForm<ContactMeForm>();
+  const { register, handleSubmit, reset } = useForm<ContactMeForm>();
+
   const _onSubmit = (data: ContactMeForm) => {
     const message = `Good news! You got a new message from portfolio :%0AName : ${data.fullName}%0AEmail : ${data.email}%0AMessage : ${data.message}
     `;
-    axios.post(
-      `https://api.telegram.org/${process.env.NEXT_PUBLIC_BOT_TOKEN}/sendMessage?chat_id=${process.env.NEXT_PUBLIC_CHAT_ID}&text=${message}`,
-      { withCredentials: true }
-    );
+    axios
+      .post(
+        `https://api.telegram.org/${process.env.NEXT_PUBLIC_BOT_TOKEN}/sendMessage?chat_id=${process.env.NEXT_PUBLIC_CHAT_ID}&text=${message}`,
+        { withCredentials: true }
+      )
+      .then(() => {
+        reset();
+        toast.success("Send message success");
+      });
   };
   return (
     <div className="z-20 relative flex flex-col w-full max-w-lg p-5 bg-white rounded-md appear1 max-h-[90%]  ">

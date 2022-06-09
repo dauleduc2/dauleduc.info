@@ -21,6 +21,7 @@
     "react-dom": "17.0.2",
     "react-hook-form": "^7.31.3",
     "react-simple-image-viewer": "^1.2.1",
+    "react-toastify": "^9.0.4",
     "tailwindcss-animation-delay": "^1.0.7"
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "@types/next-seo": "^2.1.2",
     "@types/node": "17.0.21",
     "@types/react": "17.0.40",
+    "@types/react-toastify": "^4.1.0",
     "autoprefixer": "^10.4.4",
     "eslint": "8.11.0",
     "eslint-config-next": "12.1.0",

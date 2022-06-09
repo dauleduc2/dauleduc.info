@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
 import * as React from "react";
+import { ToastContainer } from "react-toastify";
 import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
 import Nav, { selectionsType } from "./components/Nav";
@@ -33,6 +34,7 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      <ToastContainer />
       <NextSeo
         title={`Dau Le Duc`}
         description="Welcome to my profile"
