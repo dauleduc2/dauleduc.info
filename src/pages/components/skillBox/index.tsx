@@ -33,7 +33,7 @@ const SkillBox: React.FunctionComponent<SkillBoxProps> = ({
       className={`relative shadow-xl h-40 lg:h-72 cursor-pointer overflow-hidden text-white p-4 lg:p-5 ${
         isOpening.includes(title)
           ? " bg-white "
-          : `bg-gray-500 skill-box${index + 1}`
+          : `bg-gray-400 skill-box${index + 1}`
       }`}
     >
       <h1
